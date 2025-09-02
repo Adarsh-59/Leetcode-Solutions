@@ -41,12 +41,13 @@ public:
             int lftIdx = postCount[queries[i][0]];
             int rghtIdx = preCount[queries[i][1]];
 
-            if(lftIdx >= rghtIdx){
-                ans[i] = 0;
-            }
-            else{
-                ans[i] = plates[rghtIdx] - plates[lftIdx];
-            }
+            ans[i] = lftIdx<rghtIdx ? plates[rghtIdx] - plates[lftIdx] : 0;
+            // if(lftIdx >= rghtIdx){
+            //     ans[i] = 0;
+            // }
+            // else{
+            //     ans[i] = plates[rghtIdx] - plates[lftIdx];
+            // }
         }
 
         return ans;
