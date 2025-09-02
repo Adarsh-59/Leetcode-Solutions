@@ -9,22 +9,24 @@ public:
 
         preCount[0] = 0;
         for(int i=1 ; i<n ; i++){
-            if(s[i] == '|'){
-                preCount[i] = i;
-            }
-            else{
-                preCount[i] = preCount[i-1];
-            }
+            preCount[i] = s[i] == '|' ? i : preCount[i-1];
+            // if(s[i] == '|'){
+            //     preCount[i] = i;
+            // }
+            // else{
+            //     preCount[i] = preCount[i-1];
+            // }
         }
 
         postCount[n-1] = n-1;
         for(int i=n-2 ; i>=0 ; i--){
-            if(s[i] == '|'){
-                postCount[i] = i;
-            }
-            else{
-                postCount[i] = postCount[i+1];
-            }
+            postCount[i] = s[i] == '|' ? i : postCount[i+1];
+            // if(s[i] == '|'){
+            //     postCount[i] = i;
+            // }
+            // else{
+            //     postCount[i] = postCount[i+1];
+            // }
         }
 
         int lstIdx = 0;
