@@ -6,16 +6,17 @@ public:
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> minHeap;
 
         for(int i=0 ; i<n ; i++){
-            int dist = points[i][0]*points[i][0] + points[i][1]*points[i][1];
+            // int dist = points[i][0]*points[i][0] + points[i][1]*points[i][1];
 
-            minHeap.push({dist, i});
+            minHeap.push({points[i][0]*points[i][0] + points[i][1]*points[i][1], i});
         } 
 
         for(int i=0 ; i<k ; i++){
-            pair<int, int> distIdx = minHeap.top();
+            // pair<int, int> distIdx = minHeap.top();
+            ans.push_back(points[minHeap.top().second]);
             minHeap.pop();
 
-            ans.push_back(points[distIdx.second]); 
+             
         }
 
         return ans;
