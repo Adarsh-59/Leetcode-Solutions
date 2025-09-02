@@ -35,11 +35,8 @@ public:
         }
 
         for(int i=0 ; i<m ; i++){
-            int left = queries[i][0];
-            int right = queries[i][1];
-
-            int lftIdx = postCount[left];
-            int rghtIdx = preCount[right];
+            int lftIdx = postCount[queries[i][0]];
+            int rghtIdx = preCount[queries[i][1]];
 
             ans[i] = lftIdx<rghtIdx ? plates[rghtIdx] - plates[lftIdx] : 0;
         }
