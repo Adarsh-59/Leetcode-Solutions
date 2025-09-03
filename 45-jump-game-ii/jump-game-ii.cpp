@@ -6,9 +6,8 @@ public:
         dp[0] = 0;
 
         for(int i=0 ; i<n-1 ; i++){
-            for(int j=1 ; j<=nums[i] ; j++){
-                if(i+j < n)
-                    dp[i+j] = min(dp[i+j], dp[i]+1);
+            for(int j=i+1 ; j<=i+nums[i] && j<n ; j++){
+                dp[j] = min(dp[j], dp[i]+1);
             }
         }
 
