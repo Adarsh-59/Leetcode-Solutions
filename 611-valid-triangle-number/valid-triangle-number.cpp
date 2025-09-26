@@ -12,7 +12,7 @@ public:
         // for(int i=0 ; i<n ; i++){
         //     cout << nums[i] << " ";
         // }
-        cout << endl;
+        // cout << endl;
 
 
         for(i=0 ; i<n-2 ; i++){
