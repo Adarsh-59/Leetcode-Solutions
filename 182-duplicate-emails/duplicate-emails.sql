@@ -1,0 +1,5 @@
+# Write your MySQL query statement below
+SELECT p1.EMAIL AS Email
+FROM PERSON AS P1, PERSON AS P2
+WHERE (NOT(P1.ID = P2.ID) AND (P1.EMAIL = P2.EMAIL))
+GROUP BY P1.EMAIL
